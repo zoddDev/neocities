@@ -1,7 +1,70 @@
 [
     {
-        "id": 0,
-        "name": "Jeffrey",
-        "image": "/resources/images/friends/p3.jpg"
+        "name": "Alba",
+        "image": "/resources/images/friends/alba.png"
+    },
+    {
+        "name": "Kami",
+        "image": "/resources/images/friends/kami.png"
+    },
+    {
+        "name": "Pucci",
+        "image": "/resources/images/friends/pucci.png"
+    },
+    {
+        "name": "Juan",
+        "image": "/resources/images/friends/juan.png"
+    },
+    {
+        "name": "Sean",
+        "image": "/resources/images/friends/sean.png"
+    },
+    {
+        "name": "Dani",
+        "image": "/resources/images/friends/dani.png"
+    },
+    {
+        "name": "Dario",
+        "image": "/resources/images/friends/dario.png"
+    },
+    {
+        "name": "Sara",
+        "image": "/resources/images/friends/sara.png"
+    },
+    {
+        "name": "Olga",
+        "image": "/resources/images/friends/olga.png"
+    },
+    {
+        "name": "Diogo",
+        "image": "/resources/images/friends/diogo.png"
+    },
+    {
+        "name": "Alex",
+        "image": "/resources/images/friends/alex.jpg"
+    },
+    {
+        "name": "Marina",
+        "image": "/resources/images/friends/marina.png"
+    },
+    {
+        "name": "Nao",
+        "image": "/resources/images/friends/nao.png"
+    },
+    {
+        "name": "Alicia",
+        "image": "/resources/images/friends/ali.png"
+    },
+    {
+        "name": "Pablo",
+        "image": "/resources/images/friends/pablo.png"
+    },
+    {
+        "name": "Mabelén",
+        "image": "/resources/images/friends/mabelen.png"
+    },
+    {
+        "name": "Sergio",
+        "image": "/resources/images/friends/sergio.png"
     }
 ]

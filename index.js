@@ -20,15 +20,17 @@ age.innerHTML = currentAge;
 const general = [
   "Nature",
   "2000's vibes",
-  "Nostalgia",
+  "Nostalgiacore",
   "Linux",
   "Animals",
   "Reptiles",
+  "Spiders (especially tarantulas)",
   "Chilling with friends",
   "Videogames",
   "Movies & Series",
   "Computers",
   "Anime",
+  "Rock/Metal music",
 ];
 document.getElementById("general").innerHTML = general.sort().join(", ");
 
@@ -37,9 +39,12 @@ const music = [
   "Powerwolf",
   "Iron Maiden",
   "Mago de Oz",
-  "Rihanna",
+  "Megadeth",
+  "Metallica",
   "Lady Gaga",
-  "Charli XCX",
+  "Deftones",
+  "Pantera",
+  "Muse",
   "David Guetta",
   "Avenged Sevenfold",
   "Linkin Park",
@@ -48,15 +53,23 @@ const music = [
   "Modern Talking",
   "The Cranberries",
   "Arctic Monkeys",
+  "Alice In Chains",
+  "Creed",
+  "Pearl Jam",
+  "Gary Moore",
   "Backstreet Boys",
   "Black Eyed Peas",
-  "Evanescense",
+  "Evanescence",
   "Nightwish",
-  "Queen",
-  "David Bowie",
+  "Three Days Grace",
+  "Extremoduro",
   "Crystal Castles",
   "Nightcore",
-  "sauzzZe",
+  "Limp Bizkit",
+  "Slipknot",
+  "Pignoise",
+  "Michael Jackson",
+  "Simple Plan",
 ];
 document.getElementById("music").innerHTML = music.sort().join(", ");
 
@@ -69,7 +82,9 @@ const games = [
   "Resident Evil",
   "Spore",
   "Dwarf Fortress",
-  "Dark souls",
+  "Dark Souls",
+  "Elden Ring",
+  "Fallout New Vegas",
   "The Sims",
   "Nintendogs",
   "Animal Crossing",
@@ -82,6 +97,10 @@ const games = [
   "Granblue Fantasy",
   "Undertale",
   "Terraria",
+  "Call of Duty",
+  "Battlefield",
+  "Balatro",
+  "No, I'm not a Human",
 ];
 document.getElementById("games").innerHTML = games.sort().join(", ");
 
@@ -98,6 +117,8 @@ const movies = [
   "It Follows",
   "A Bronx Tale",
   "Gran Torino",
+  "Interstellar",
+  "In Time",
 ];
 document.getElementById("movies").innerHTML = movies.sort().join(", ");
 
@@ -106,8 +127,14 @@ const series = [
   "Game of Thrones",
   "Breaking Bad",
   "How I met your mother",
-  "Lost",
+  "LOST",
   "From",
   "Vikings",
+  "The Walking Dead",
+  "Narcos",
+  "Dark",
+  "Black Mirror",
+  "Peaky Blinders",
+  "The Boys",
 ];
 document.getElementById("series").innerHTML = series.sort().join(", ");

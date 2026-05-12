@@ -1,0 +1,20 @@
+[
+    {
+        "date": "2024.06.01",
+        "title": "森に魔法薬ある",
+        "description": "Aquella noche de verano, fui al bosque con aquellas dos personas y otros amigos que acaba de conocer. \nNos perdimos en algún lugar de allí, donde nos quedamos a beber y fumar hasta que nos dieron los sentidos. \nSigo acordándome de ese túnel. \n... \n\n\nTambién recuerdo los tres nombres. \n...",
+        "links": [
+            {
+                "text": "名前",
+                "url": "/pages/memories/pages/names/names.html"
+            }
+        ],
+        "images": [
+            {
+                "url": "/resources/images/gifs/hand_tunnel.gif",
+                "alt": "tunel",
+                "wide": true
+            }
+        ]
+    }
+]

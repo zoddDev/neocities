@@ -1,0 +1,53 @@
+body {
+  /* background-image: url("resources/images/background.png"); */
+  background-image: url("https://i.pinimg.com/originals/27/00/d6/2700d6f5505c41ec96ed10798d9f86ac.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+* {
+  color: white;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.car {
+  background-image: url("/resources/images/car_cursed.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 400px;
+}
+
+.name {
+  background: black;
+}
+
+.alejandro {
+  color: red;
+  transition: transform 3s ease;
+}
+
+.alejandro:hover {
+  transform: translateY(1000px) rotateZ(45deg);
+}
+
+.valeria {
+  color: rgb(0, 132, 255);
+  transition: transform 1s ease;
+}
+
+.valeria:hover {
+  transform: translateX(250px) translateY(-50px) rotateZ(-45deg);
+}
+
+.mario {
+  color: green;
+  transition: transform 3s ease;
+}
+
+.mario:hover {
+  transform: translateX(-230px);
+}

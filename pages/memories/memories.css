@@ -1,11 +1,13 @@
 :root {
   /* --blue: rgb(138, 138, 255); */
   --blue: #3d1266;
+  --text-selection: #340fca;
   --white: #ffffff;
   --border: #b648e9;
   --text: #ea00ff;
   --background: #000000b7;
   --background-table: #0000006e;
+  --blood: #410000;
 }
 
 * {
@@ -14,7 +16,7 @@
   box-sizing: border-box;
   color: var(--black);
   border-color: var(--border);
-}
+} 
 
 body {
   /* background-image: url("resources/images/background.png"); */
@@ -25,12 +27,12 @@ body {
 }
 
 ::selection {
-  background-color: var(--border); /* Color de fondo cuando se selecciona */
+  background-color: var(--text-selection); /* Color de fondo cuando se selecciona */
   color: var(--white); /* Color del texto cuando se selecciona */
 }
 
 ::-moz-selection {
-  background-color: var(--border); /* Color de fondo para Firefox */
+  background-color: var(--text-selection); /* Color de fondo para Firefox */
   color: var(--white); /* Color del texto para Firefox */
 }
 
@@ -216,10 +218,13 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%),
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%),
     linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 9999;
-  background-size: 100% 2px, 3px 100%;
+  background-size:
+    100% 2px,
+    3px 100%;
   pointer-events: none;
 }
 
@@ -237,6 +242,7 @@ body {
 
 a {
   background-color: var(--blue);
+  background-image: "https://img.magnific.com/foto-gratis/grunge-textura-pared_1194-6108.jpg?semt=ais_hybrid&w=740&q=80";
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
@@ -258,6 +264,19 @@ a:hover {
   text-decoration: none;
 }
 
+.texture-link {
+  border: black 1px solid;
+  font-weight: bolder;
+}
+
+.texture-link:hover {
+  background-image: url("/resources/images/textures/stone_texture.jpg");
+  background-blend-mode: overlay;
+  color: var(--blood);
+  border: black 2px solid;
+  filter: contrast(0.7);
+}
+
 .no-decorations a:visited {
   background-color: #00000000;
   color: var(--white);
@@ -275,7 +294,12 @@ a:hover {
 }
 
 #float {
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000, 0 0;
+  text-shadow:
+    -1px 0 #000,
+    0 1px #000,
+    1px 0 #000,
+    0 -1px #000,
+    0 0;
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
