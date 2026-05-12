@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -33,7 +33,7 @@
     <!-- <div class="position-fixed bottom-0 w-100 text-center">
       <img style="width: 100px" src="/resources/images/gifs/purple_rose.gif" />
     </div> -->
-    <div class="w-100 m-auto container pt-sm-5">
+    <div class="w-100 m-auto container py-sm-2">
       <div class="row bg-background fw-bold text-center py-2 flex border-text mb-2">
         <div class="position-relative w-100 m-0 p-0">
           <div class="position-absolute bg-info w-100 justify-content-between">
@@ -94,7 +94,7 @@
               <div class="m-auto text-center justify-content-center">
                 <!-- PORTRAIT -->
                 <div class="parent portrait m-auto">
-                  <img class="portrait image1" src="/resources/images/tinted_noise.png" />
+                  <img class="portrait image1 tinted" src="/resources/images/me/me.png" />
                   <img class="portrait image2" src="/resources/images/gifs/purple_frame.gif" />
                   <img
                     class="portrait image3"
@@ -172,8 +172,8 @@
               <div class="col-md">
                 <div class="animation-container">
                   <div id="marquee">
-                    <marquee behavior="scroll" direction="left" scrolldelay="0" scrollamount="5"
-                      ><div class="d-flex gap-3 justify-content-between animated-div">
+                    <marquee behavior="scroll" direction="left" scrolldelay="0" scrollamount="5">
+                      <div class="d-flex gap-3 justify-content-between animated-div">
                         <a href="http://users3.smartgb.com/g/g.php?a=s&i=g36-37035-35"
                           ><img
                             alt="Guestbook"
@@ -190,8 +190,9 @@
                             src="http://extras3.smartgb.com/b/gb_80x40.gif"
                             width="80"
                             height="40"
-                        /></a></div
-                    ></marquee>
+                        /></a>
+                      </div>
+                    </marquee>
                   </div>
                 </div>
                 <div class="section">
@@ -225,7 +226,7 @@
                         <a href=""
                           ><img src="/resources/images/gifs/3dkingdom.gif" class="button-banner"
                         /></a>
-                        <a href=""
+                        <a href="https://wenderlygames.itch.io/assessment-examination"
                           ><img src="/resources/images/gifs/necrocities.gif" class="button-banner"
                         /></a>
                         <a href=""
@@ -247,26 +248,10 @@
           </div>
           <div class="section">
             <div class="mini-header my-2 mt-4 p-0">Jose's Friend Space</div>
-            <div class="d-flex flex-wrap justify-content-center gap-2 bg-black border-text p-3">
-              <div>
-                <div class="mini-parent">
-                  <img class="mini-portrait image1" src="/resources/images/friends/p1.png" />
-                  <img class="mini-portrait image2" src="/resources/images/gifs/purple_frame.gif" />
-                </div>
-                <div class="text-text text-center">
-                  <a href="">Ada</a>
-                </div>
-              </div>
-              <div>
-                <div class="mini-parent">
-                  <img class="mini-portrait image1" src="/resources/images/friends/p2.png" />
-                  <img class="mini-portrait image2" src="/resources/images/gifs/purple_frame.gif" />
-                  <div class="text-text text-center">
-                    <a href="">Pablo</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div
+              id="friends"
+              class="d-flex flex-wrap justify-content-center gap-2 bg-black border-text p-3"
+            ></div>
           </div>
           <div class="section">
             <div class="mini-header my-2 mt-4 p-0">Memories</div>
@@ -348,5 +333,6 @@
     <script src="scripts/wobbly.js"></script>
     <script src="scripts/bubbles.js"></script>
     <script src="scripts/webamp.js"></script>
+    <script src="pages/index/friends.js"></script>
   </body>
 </html>

@@ -43,7 +43,7 @@ const music = [
   "David Guetta",
   "Avenged Sevenfold",
   "Linkin Park",
-  "Michal Jackson",
+  "Michael Jackson",
   "TOOL",
   "Modern Talking",
   "The Cranberries",
