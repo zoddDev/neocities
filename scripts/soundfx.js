@@ -42,10 +42,10 @@ function createsoundbite(sound) {
 //Initialize two sound clips with 1 fallback file each:
 
 var mouseoversound = createsoundbite(
-  "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/hover.ogg",
+  "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/hover.ogg",
 );
 var clicksound = createsoundbite(
-  "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/click.ogg",
+  "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/click.ogg",
 );
 
 // On mouse enter

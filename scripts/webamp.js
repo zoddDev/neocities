@@ -20,7 +20,7 @@ const tracks = [
       artist: "scizzie",
     },
 
-    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/aquatic_ambience.mp3",
+    url: "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/music/aquatic_ambience.mp3",
     duration: 125,
   },
   {
@@ -29,7 +29,7 @@ const tracks = [
       artist: "Doki Doki Literature Club",
     },
 
-    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/dokidoki_i_still_love_you.mp3",
+    url: "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/music/dokidoki_i_still_love_you.mp3",
     duration: 125,
   },
   {
@@ -38,7 +38,7 @@ const tracks = [
       artist: "01-11",
     },
 
-    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/legitimatebusinessmansocialclub.wav",
+    url: "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/music/legitimatebusinessmansocialclub.wav",
     duration: 130,
   },
   {
@@ -47,7 +47,7 @@ const tracks = [
       artist: "temcandoanything ",
     },
 
-    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/frutigeraero1.mp3",
+    url: "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/music/frutigeraero1.mp3",
     duration: 98,
   },
   {
@@ -56,7 +56,7 @@ const tracks = [
       artist: "milk cassette",
     },
 
-    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/milk_cassette.mp3",
+    url: "https://cdn.jsdelivr.net/gh/zoddDev/neocities@main/resources/audios/music/milk_cassette.mp3",
     duration: 150,
   },
 ];
