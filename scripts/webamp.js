@@ -99,7 +99,10 @@ function startWebAmp() {
   });
 
   // Returns a promise indicating when it's done loading.
-  webamp.renderWhenReady(document.getElementById("webamp"));
+
+  window.addEventListener("load", async () => {
+    await webamp.renderWhenReady(document.getElementById("webamp"));
+  });
 }
 
 // Load the WebAmp script and run the above function
@@ -115,8 +118,8 @@ script.onload = function () {
   link.rel = "stylesheet";
   link.href = "styles/webamp-skins/webamp.css";
   document.head.appendChild(link);
-
+  // webamp.setVolume(20);
   webamp.play();
 };
-script.src = "https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js";
+script.src = "/scripts/webamp.bundle.min.js";
 document.head.appendChild(script);
