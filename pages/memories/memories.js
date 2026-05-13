@@ -1,7 +1,8 @@
 import { HTMLElement } from "../../scripts/lib/htmlElement.js";
 
 export class MemoriesPage {
-  static SONG_URL = "https://files.catbox.moe/yd2dpi.mp3";
+  static SONG_URL = "/resources/audios/Yabujin-302_-ionwan2go-_piano-version_-loop-best-part.png";
+  // static SONG_URL = "https://files.catbox.moe/yd2dpi.mp3";
 
   static PARAM_PAGE = "page";
   static PARAM_SIZE = "size";
