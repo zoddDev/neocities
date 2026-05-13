@@ -1437,15 +1437,12 @@ function _windowsStandardLWorkingInBackgroundcur_tag(str_tag) {
 //customize this with your desired functions
 //this starts the cursor when the page loads...
 //if you want to have the cursor start another way, then comment this out
-window.addEventListener("load", function () {
-  //make a theme here!
-  //see https://www.w3schools.com/tags/ for a list of all elements
-
-  //default cursor
-  //   dinosaurani();
-
+function init() {
+  console.log("adsdas");
   animateCursor(arr_purple_normal);
   animateCursorForElement(arr_purple_wait, "input");
   animateCursorForElement(arr_purple_wait, "li");
   animateCursorForElement(arr_purple_wait, "a");
-});
+}
+
+init();

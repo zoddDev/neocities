@@ -3,7 +3,7 @@ import { AudioLoader } from "../../scripts/lib/musicLoader.js";
 
 export class MemoriesPage {
   static SONG_URL =
-    "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/Yabujin%20-%20302_%20ionwan2go%20(piano%20version)%20loop%20best%20part.mp3";
+    "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/music/Yabujin%20-%20302_%20ionwan2go%20(piano%20version)%20loop%20best%20part.mp3";
 
   static PARAM_PAGE = "page";
   static PARAM_SIZE = "size";

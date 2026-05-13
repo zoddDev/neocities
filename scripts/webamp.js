@@ -20,7 +20,7 @@ const tracks = [
       artist: "scizzie",
     },
 
-    url: "https://files.catbox.moe/p5f5h8.mp3",
+    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/aquatic_ambience.mp3",
     duration: 125,
   },
   {
@@ -29,7 +29,7 @@ const tracks = [
       artist: "Doki Doki Literature Club",
     },
 
-    url: "https://files.catbox.moe/0y75cl.mp3",
+    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/dokidoki_i_still_love_you.mp3",
     duration: 125,
   },
   {
@@ -38,7 +38,7 @@ const tracks = [
       artist: "01-11",
     },
 
-    url: "https://files.catbox.moe/o6zr9j.wav",
+    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/legitimatebusinessmansocialclub.wav",
     duration: 130,
   },
   {
@@ -47,7 +47,7 @@ const tracks = [
       artist: "temcandoanything ",
     },
 
-    url: "https://files.catbox.moe/1lm7k2.mp3",
+    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/frutigeraero1.mp3",
     duration: 98,
   },
   {
@@ -56,21 +56,9 @@ const tracks = [
       artist: "milk cassette",
     },
 
-    url: "https://files.catbox.moe/qcxvew.mp3",
+    url: "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/milk_cassette.mp3",
     duration: 150,
   },
-
-  // {
-  //   metaData: {
-  //     artist: "Charli XCX",
-  //     title: "365",
-  //   },
-  //   // NOTE: Your audio file must be served from the same domain as your HTML
-  //   // file, or served with permissive CORS HTTP headers:
-  //   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-  //   url: "https://files.catbox.moe/ep459r.mp3",
-  //   duration: 2100,
-  // },
 ];
 
 shuffle(tracks);
@@ -130,5 +118,5 @@ script.onload = function () {
 
   webamp.play();
 };
-script.src = "https://file.garden/ZRW0B_KULjLI59Tb/unpkgwebamp.js";
+script.src = "https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js";
 document.head.appendChild(script);
