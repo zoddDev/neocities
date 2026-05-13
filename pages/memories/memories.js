@@ -257,10 +257,20 @@ export class MemoriesPage {
     });
   }
 
+  updateUrlPagination() {
+    const url = new URL(window.location);
+    url.searchParams.set(MemoriesPage.PARAM_PAGE, this.page);
+    url.searchParams.set(MemoriesPage.PARAM_SIZE, this.size);
+    url.searchParams.set(MemoriesPage.PARAM_ORDER, this.order);
+
+    window.history.pushState({}, "", url);
+  }
+
   reset() {
     this.entries.destroy();
     this.pagination.destroy();
     this.sort.destroy();
+    this.updateUrlPagination();
 
     this.init();
   }
@@ -276,10 +286,6 @@ export class MemoriesPage {
 
   set page(value) {
     this._page = value;
-
-    const url = new URL(window.location);
-    url.searchParams.set(MemoriesPage.PARAM_PAGE, value);
-    window.history.pushState({}, "", url);
   }
 
   get page() {
@@ -288,9 +294,6 @@ export class MemoriesPage {
 
   set size(value) {
     this._size = value;
-    const url = new URL(window.location);
-    url.searchParams.set(MemoriesPage.PARAM_SIZE, value);
-    window.history.pushState({}, "", url);
   }
 
   get size() {
@@ -299,9 +302,6 @@ export class MemoriesPage {
 
   set order(value) {
     this._order = value;
-    const url = new URL(window.location);
-    url.searchParams.set(MemoriesPage.PARAM_ORDER, value);
-    window.history.pushState({}, "", url);
   }
 
   get order() {
