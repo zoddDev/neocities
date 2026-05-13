@@ -7,7 +7,7 @@ export class MemoriesPage {
   static PARAM_SIZE = "size";
   static PARAM_ORDER = "order";
 
-  static DEFAULT_PAGE_SIZE = 2;
+  static DEFAULT_PAGE_SIZE = 3;
   static DEFAULT_PAGE = 0;
   static DEFAULT_ORDER = "desc";
 
