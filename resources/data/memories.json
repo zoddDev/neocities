@@ -3,15 +3,79 @@
         "date": "2024.06.01",
         "title": "森に魔法薬ある",
         "description": "Aquella noche de verano, fui al bosque con aquellas dos personas y otros amigos que acaba de conocer. \nNos perdimos en algún lugar de allí, donde nos quedamos a beber y fumar hasta que nos dieron los sentidos. \nSigo acordándome de ese túnel. \n... \n\n\nTambién recuerdo los tres nombres. \n...",
+        "images": [
+            {
+                "url": "/resources/images/gifs/hand_tunnel.gif",
+                "alt": "tunel",
+                "wide": true
+            }
+        ],
         "links": [
             {
                 "text": "名前",
                 "url": "/pages/memories/pages/names/names.html"
             }
-        ],
+        ]
+    },
+    {
+        "date": "2026.04.19",
+        "title": "昨日、蜘を買った",
+        "description": "Ayer conseguí una nueva tarántula, una <b>Brachypelma Boehmei</b>. \nEs una hembra bastante grande, tranquila y con un color naranja muy vivo. Es preciosa. \nLa he llamado <b>Felina</b> (フェリナ), ahora <b>Migi</b> (ミギ) tiene una nueva compañera.",
         "images": [
             {
-                "url": "/resources/images/gifs/hand_tunnel.gif",
+                "url": "/resources/images/memories/felina1.png",
+                "alt": "tunel",
+                "wide": true
+            }
+        ],
+        "links": [
+            {
+                "text": "Take a look at my pets!",
+                "url": "/pages/pets/pets.html"
+            }
+        ]
+    },
+    {
+        "date": "2026.05.13",
+        "title": "今が良くない",
+        "description": "Últimamente no me siento en paz conmigo mismo, o con la vida en general. \nMe siento algo desmotivado, vivo los días sin más. durante la semana trabajo todos los días, algunos días quedo con amigos o voy de fiesta los findes, pero siento que esta dinámica no me llena realmente. \n\nCreo que he perdido el rumbo y pienso que tengo que recuperar ciertas cosas que dejé atrás. Quiero tener una dirección en mi vida, a largo plazo, más allá del trabajo. Me he propuesto tratar de perseguir objetivos y metas que me motivan. \n\n\nNo quiero fallar esta vez. \n\nSería fallarme a mí mismo.",
+        "images": [
+            {
+                "url": "/resources/images/memories/IMG_20260513_101249_2.png",
+                "alt": "eye",
+                "wide": false
+            }
+        ]
+    },
+    {
+        "date": "2026.05.12",
+        "title": "。。。",
+        "description": "A veces pienso en cuanto me gustaría abrazar al Jose del año pasado y decirle que todo estaría bien. \n\nPero luego me doy cuenta de que él todavía no había perdido el rumbo. \n\n\n¿Quién debería abrazar a quién? \n..."
+    },
+    {
+        "date": "2026.05.09",
+        "title": "PUCCIFIESTAは楽しかった",
+        "description": "Estuvo bastante divertido, me reí mucho con todos. \n\nAunque yo tenía el izquierdo tan rojo que estaba como Sans.",
+        "images": [
+            {
+                "url": "/resources/images/memories/IMG-20260509-WA0035.jpg",
+                "alt": "tunel",
+                "wide": false
+            },
+            {
+                "url": "/resources/images/memories/sans.jpg",
+                "alt": "sans",
+                "wide": false
+            }
+        ]
+    },
+    {
+        "date": "2026.05.04",
+        "title": "公園で本を読んだ",
+        "description": "Estuve con Alba leyendo en el parque, hacía una tarde muy agradable, dimos un paseo y vimos los patos del lago.",
+        "images": [
+            {
+                "url": "/resources/images/memories/IMG_20260513_101113.jpg",
                 "alt": "tunel",
                 "wide": true
             }

@@ -1,79 +1,309 @@
-const url = "https://files.catbox.moe/yd2dpi.mp3";
-const audio = new Audio(url);
-audio.loop = true;
-audio.volume = 0.2; // 20% volume
-audio.play();
+import { HTMLElement } from "../../scripts/lib/htmlElement.js";
 
-fetch("/resources/data/memories.json")
-  .then((response) => response.json())
-  .then((entries) => {
-    console.log(entries);
+export class MemoriesPage {
+  static SONG_URL = "https://files.catbox.moe/yd2dpi.mp3";
 
-    mountEntries(entries);
-  });
+  static PARAM_PAGE = "page";
+  static PARAM_SIZE = "size";
+  static PARAM_ORDER = "order";
 
-function mountEntries(entries) {
-  const container = document.getElementById("entries");
-  entries.forEach((entry) => {
-    console.log("ENTRY", entry);
+  static DEFAULT_PAGE_SIZE = 2;
+  static DEFAULT_PAGE = 0;
+  static DEFAULT_ORDER = "desc";
 
-    const entryElement = document.createElement("div");
-    entryElement.classList.add("entry");
-    entryElement.innerHTML = createEntry(entry);
-    container.appendChild(entryElement);
-  });
-}
+  constructor() {
+    this.page =
+      new URLSearchParams(window.location.search).get(MemoriesPage.PARAM_PAGE) ??
+      MemoriesPage.DEFAULT_PAGE;
 
-function createEntry(entry) {
-  const template = `
-        <div class="window">
-            <div class="title-bar">
-              <div class="title-bar-text">${entry.title}</div>
-              <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
-              </div>
-            </div>
-            <div class="window-body">
-              <div class="section">
-                <div>
-                  <div>${formatBodyText(entry.description)}</div>
-                  ${insertImages(entry.images)}
-                  ${insertLinks(entry.links)}
-                </div>
-              </div>
-            </div>
-            <div class="status-bar">
-              <p class="status-bar-field text-center fw-bolder">${entry.date}</p>
-            </div>
+    this.size =
+      new URLSearchParams(window.location.search).get(MemoriesPage.PARAM_SIZE) ??
+      MemoriesPage.DEFAULT_PAGE_SIZE;
+
+    this.order =
+      new URLSearchParams(window.location.search).get(MemoriesPage.PARAM_ORDER) ??
+      MemoriesPage.DEFAULT_ORDER;
+
+    this.totalElems = 0;
+
+    this.entries = new HTMLElement("entries");
+    this.pagination = new HTMLElement("pagination");
+    this.sort = new HTMLElement("order");
+    this.prevPageButton = new HTMLElement("prevPage");
+    this.nextPageButton = new HTMLElement("nextPage");
+    this.playSong();
+  }
+
+  init() {
+    this.fetchData(this.page, this.size, this.order);
+  }
+
+  fetchData(page, size, order) {
+    fetch("/resources/data/memories.json")
+      .then((response) => response.json())
+      .then((entries) => {
+        if (order === "asc") {
+          entries.sort((a, b) => new Date(a.date) - new Date(b.date));
+        } else {
+          entries.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+
+        return entries;
+      })
+      .then((entries) => {
+        this.totalElems = entries.length;
+
+        if (size) {
+          const startIndex = page * size;
+          const endIndex = startIndex + parseInt(size);
+
+          entries = entries.slice(startIndex, endIndex);
+        }
+
+        return entries;
+      })
+      .then((entries) => {
+        this.mountEntries(entries);
+        this.insertPaginationButtons();
+        this.insertOrderButtons();
+      });
+  }
+
+  mountEntries(entries) {
+    entries.forEach((entry) => {
+      const entryElement = document.createElement("div");
+
+      entryElement.classList.add("entry");
+      entryElement.innerHTML = this.createEntry(entry);
+
+      this.entries.get().appendChild(entryElement);
+    });
+  }
+
+  createEntry(entry) {
+    return `
+      <div class="window">
+        <div class="title-bar">
+          <div class="title-bar-text">${entry.title}</div>
+
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
         </div>
-    `;
-  return template;
-}
 
-function formatBodyText(text) {
-  return text.replace(/\n/g, "<br />");
-}
+        <div class="window-body">
+          <div class="section">
+            <div>
+              <div>${this.formatBodyText(entry.description)}</div>
 
-function insertImages(images) {
-  if (!images || images.length === 0) return "";
-
-  return `
-        <br />
-        <div class="d-flex flex-wrap gap-4 justify-content-center">
-            ${images.map((image) => `<img class="mw-100" src="${image.url}" width="${image.wide ? "400px" : "200px"}" />`).join("")}
+              ${this.insertImages(entry.images)}
+              ${this.insertLinks(entry.links)}
+            </div>
+          </div>
         </div>
-    `;
-}
 
-function insertLinks(links) {
-  if (!links || links.length === 0) return "";
-
-  return `
-        <br />
-        <div class="d-flex flex-wrap gap-2 justify-content-center">
-            ${links.map((link) => `<button class="default col-12 col-md-4 texture-link" onclick="window.location.href='${link.url}'">${link.text ? link.text : link.url}</button>`).join("")}
+        <div class="status-bar">
+          <p class="status-bar-field text-center fw-bolder">
+            ${entry.date}
+          </p>
         </div>
+      </div>
     `;
+  }
+
+  formatBodyText(text) {
+    return text.replace(/\n/g, "<br />");
+  }
+
+  insertImages(images) {
+    if (!images || images.length === 0) return "";
+
+    return `
+      <br />
+
+      <div class="d-flex flex-wrap gap-4 justify-content-center">
+        ${images
+          .map(
+            (image) => `
+              <img
+                class="mw-100"
+                src="${image.url}"
+                width="${image.wide ? "400px" : "200px"}"
+              />
+            `,
+          )
+          .join("")}
+      </div>
+    `;
+  }
+
+  insertLinks(links) {
+    if (!links || links.length === 0) return "";
+
+    return `
+      <br />
+
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        ${links
+          .map(
+            (link) => `
+              <button
+                class="default col-12 col-md-4 texture-link"
+                onclick="window.location.href='${link.url}'"
+              >
+                ${link.text ? link.text : link.url}
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+    `;
+  }
+
+  insertPaginationButtons() {
+    this.pagination.appendHTML(
+      `
+        <button
+          id="prevPage"
+          class="default texture-link w-auto"
+          ${this.page <= 0 ? "disabled" : ""}
+        >
+          ◄
+        </button>
+      `,
+    );
+
+    this.prevPageButton.addClickListener(() => {
+      this.page = parseInt(this.page) - 1;
+
+      if (this.page < 0) {
+        this.page = 0;
+      }
+
+      this.reset();
+    });
+
+    for (let i = 0; i < Math.ceil(this.totalElems / this.size); i++) {
+      const idButton = `page-item-${i}`;
+      const button = new HTMLElement(idButton);
+      this.pagination.appendHTML(
+        `
+          <button
+            id="${idButton}"
+            class="default texture-link ${i == this.page ? "active" : ""}"
+            style="width: 5px; padding: 0;"
+          >
+            ${i + 1}
+          </button>
+        `,
+      );
+
+      button.addClickListener(() => {
+        this.page = i;
+        this.reset();
+      });
+    }
+
+    this.pagination.appendHTML(
+      `
+        <button
+          id="nextPage"
+          class="default texture-link w-auto"
+          ${(this.page + 1) * this.size >= this.totalElems ? "disabled" : ""}
+          >
+          ►
+        </button>
+      `,
+    );
+
+    this.nextPageButton.addClickListener(() => {
+      this.page = parseInt(this.page) + 1;
+      this.reset();
+    });
+  }
+
+  insertOrderButtons() {
+    this.sort.appendHTML(
+      `
+        <button
+          id="order-desc"
+          class="default texture-link w-auto ${this.order === "desc" ? "active" : ""}"
+        >
+          Newest
+        </button>
+        <button
+          id="order-asc"
+          class="default texture-link w-auto ${this.order === "asc" ? "active" : ""}"
+        >
+          Oldest
+        </button>
+      `,
+    );
+    const orderAscButton = new HTMLElement("order-asc");
+    const orderDescButton = new HTMLElement("order-desc");
+
+    orderAscButton.addClickListener(() => {
+      this.order = "asc";
+      this.reset();
+    });
+    orderDescButton.addClickListener(() => {
+      this.order = "desc";
+      this.reset();
+    });
+  }
+
+  reset() {
+    this.entries.destroy();
+    this.pagination.destroy();
+    this.sort.destroy();
+
+    this.init();
+  }
+
+  playSong() {
+    const audio = new Audio(MemoriesPage.SONG_URL);
+
+    audio.loop = true;
+    audio.volume = 0.2;
+
+    audio.play();
+  }
+
+  set page(value) {
+    this._page = value;
+
+    const url = new URL(window.location);
+    url.searchParams.set(MemoriesPage.PARAM_PAGE, value);
+    window.history.pushState({}, "", url);
+  }
+
+  get page() {
+    return this._page;
+  }
+
+  set size(value) {
+    this._size = value;
+    const url = new URL(window.location);
+    url.searchParams.set(MemoriesPage.PARAM_SIZE, value);
+    window.history.pushState({}, "", url);
+  }
+
+  get size() {
+    return this._size;
+  }
+
+  set order(value) {
+    this._order = value;
+    const url = new URL(window.location);
+    url.searchParams.set(MemoriesPage.PARAM_ORDER, value);
+    window.history.pushState({}, "", url);
+  }
+
+  get order() {
+    return this._order;
+  }
 }
+
+new MemoriesPage().init();
