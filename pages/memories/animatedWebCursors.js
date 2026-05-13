@@ -489,11 +489,15 @@ function staticCursor(str_image) {
 
 //call this to set a static cursor to a tag
 function staticCursorForElement(str_image, str_tagName) {
-  //clear incase the previous cursor was set to an animation...
-  num_cursorAnimationFrame = 0;
-  clearInterval(window["int_cursorAnimationInterval_" + str_tagName]);
-  //
-  setCursorToTag(str_image, str_tagName);
+  // //clear incase the previous cursor was set to an animation...
+  // num_cursorAnimationFrame = 0;
+  // clearInterval(window["int_cursorAnimationInterval_" + str_tagName]);
+  // //
+  // setCursorToTag(str_image, str_tagName);
+
+  //next frame
+
+  animateCursorForElement([str_image], str_tagName);
 }
 
 //---------------------------------------------//
@@ -1431,6 +1435,18 @@ function _windowsStandardLWorkingInBackgroundcur() {
 function _windowsStandardLWorkingInBackgroundcur_tag(str_tag) {
   staticCursorForElement("XPcursors/WindowsStandardLarge/WorkingInBackground.png", str_tag);
 }
+function _darkSoulsNormalCur() {
+  staticCursor("Custom/darksouls/normal.png");
+}
+function _darkSoulsNormalCur_tag(str_tag) {
+  staticCursorForElement("Custom/darksouls/normal.png", str_tag);
+}
+function _darkSoulsHandCur() {
+  staticCursor("Custom/darksouls/hand.png");
+}
+function _darkSoulsHandCur_tag(str_tag) {
+  staticCursorForElement("Custom/darksouls/hand.png", str_tag);
+}
 
 //---------------ON PAGE LOAD, CUSTOMIZE THIS...---------------//
 
@@ -1438,13 +1454,8 @@ function _windowsStandardLWorkingInBackgroundcur_tag(str_tag) {
 //this starts the cursor when the page loads...
 //if you want to have the cursor start another way, then comment this out
 window.addEventListener("load", function () {
-  //make a theme here!
-  //see https://www.w3schools.com/tags/ for a list of all elements
-
-  //default cursor
-  //   dinosaurani();
-
-  animateCursor(arr_purple_normal);
-
-  _3dwarrocur();
+  _darkSoulsNormalCur();
+  _darkSoulsHandCur_tag("button");
+  _darkSoulsHandCur_tag("li");
+  _darkSoulsHandCur_tag("a");
 });

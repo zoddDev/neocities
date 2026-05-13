@@ -1,8 +1,9 @@
 import { HTMLElement } from "../../scripts/lib/htmlElement.js";
+import { AudioLoader } from "../../scripts/lib/musicLoader.js";
 
 export class MemoriesPage {
-  static SONG_URL = "/resources/audios/Yabujin-302_-ionwan2go-_piano-version_-loop-best-part.png";
-  // static SONG_URL = "https://files.catbox.moe/yd2dpi.mp3";
+  static SONG_URL =
+    "https://github.com/zoddDev/neocities/raw/refs/heads/main/resources/audios/Yabujin%20-%20302_%20ionwan2go%20(piano%20version)%20loop%20best%20part.mp3";
 
   static PARAM_PAGE = "page";
   static PARAM_SIZE = "size";
@@ -32,7 +33,8 @@ export class MemoriesPage {
     this.sort = new HTMLElement("order");
     this.prevPageButton = new HTMLElement("prevPage");
     this.nextPageButton = new HTMLElement("nextPage");
-    this.playSong();
+
+    new AudioLoader(MemoriesPage.SONG_URL).play(true, 0.2);
   }
 
   init() {
