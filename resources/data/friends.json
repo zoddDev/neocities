@@ -1,15 +1,15 @@
 [
     {
+        "name": "Mabelén",
+        "image": "/resources/images/friends/mabelen.png"
+    },
+    {
         "name": "Alba",
         "image": "/resources/images/friends/alba.png"
     },
     {
         "name": "Kami",
         "image": "/resources/images/friends/kami.png"
-    },
-    {
-        "name": "Pucci",
-        "image": "/resources/images/friends/pucci.png"
     },
     {
         "name": "Juan",
@@ -24,7 +24,11 @@
         "image": "/resources/images/friends/dani.png"
     },
     {
-        "name": "Dario",
+        "name": "Pucci",
+        "image": "/resources/images/friends/pucci.png"
+    },
+    {
+        "name": "Darío",
         "image": "/resources/images/friends/dario.png"
     },
     {
@@ -58,10 +62,6 @@
     {
         "name": "Pablo",
         "image": "/resources/images/friends/pablo.png"
-    },
-    {
-        "name": "Mabelén",
-        "image": "/resources/images/friends/mabelen.png"
     },
     {
         "name": "Sergio",

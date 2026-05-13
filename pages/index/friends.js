@@ -15,16 +15,12 @@ function createFriend(friendImage, friendName) {
 fetch("/resources/data/friends.json")
   .then((response) => response.json())
   .then((friends) => {
-    console.log(friends);
-
     mountFriends(friends);
   });
 
 function mountFriends(friends) {
   const container = document.getElementById("friends");
   friends.forEach((friend) => {
-    console.log("FRIEND", friend);
-
     const { name, image } = friend;
     const friendElement = document.createElement("div");
     friendElement.classList.add("friend");
