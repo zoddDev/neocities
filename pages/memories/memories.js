@@ -34,7 +34,7 @@ export class MemoriesPage {
     this.prevPageButton = new HTMLElement("prevPage");
     this.nextPageButton = new HTMLElement("nextPage");
 
-    new AudioLoader(MemoriesPage.SONG_URL).play(true, 0.2);
+    new AudioLoader(MemoriesPage.SONG_URL).setup();
   }
 
   init() {
@@ -273,15 +273,6 @@ export class MemoriesPage {
     this.updateUrlPagination();
 
     this.init();
-  }
-
-  playSong() {
-    const audio = new Audio(MemoriesPage.SONG_URL);
-
-    audio.loop = true;
-    audio.volume = 0.2;
-
-    audio.play();
   }
 
   set page(value) {

@@ -1435,16 +1435,16 @@ function _windowsStandardLWorkingInBackgroundcur() {
 function _windowsStandardLWorkingInBackgroundcur_tag(str_tag) {
   staticCursorForElement("XPcursors/WindowsStandardLarge/WorkingInBackground.png", str_tag);
 }
-function _darkSoulsNormalCur() {
+function _winxpnormal() {
   staticCursor("Custom/darksouls/normal.png");
 }
-function _darkSoulsNormalCur_tag(str_tag) {
+function _winxpnormal_tag(str_tag) {
   staticCursorForElement("Custom/darksouls/normal.png", str_tag);
 }
-function _darkSoulsHandCur() {
+function _winxphand() {
   staticCursor("Custom/darksouls/hand.png");
 }
-function _darkSoulsHandCur_tag(str_tag) {
+function _winxphand_tag(str_tag) {
   staticCursorForElement("Custom/darksouls/hand.png", str_tag);
 }
 
@@ -1454,8 +1454,8 @@ function _darkSoulsHandCur_tag(str_tag) {
 //this starts the cursor when the page loads...
 //if you want to have the cursor start another way, then comment this out
 window.addEventListener("load", function () {
-  _darkSoulsNormalCur();
-  _darkSoulsHandCur_tag("button");
-  _darkSoulsHandCur_tag("li");
-  _darkSoulsHandCur_tag("a");
+  _winxpnormal();
+  _winxphand_tag("button");
+  _winxphand_tag("li");
+  _winxphand_tag("a");
 });

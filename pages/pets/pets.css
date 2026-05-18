@@ -1,0 +1,94 @@
+:root {
+  /* --blue: rgb(138, 138, 255); */
+  --blue: #3d1266;
+  --white: #ffffff;
+  --black: hsl(0, 0%, 0%);
+  --border: #4c00ff;
+  --text: #ea00ff;
+  --background: #000000b7;
+  --background-table: #0000006e;
+}
+
+* {
+  font-family: "Times New Roman", Times, serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+body {
+  /* background-image: url("resources/images/background.png"); */
+  background-image: url("/resources/images/gifs/internet_checkpoint.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+  cursor: url("AppStarting.ani");
+}
+
+::selection {
+  background-color: var(--border); /* Color de fondo cuando se selecciona */
+  color: var(--white); /* Color del texto cuando se selecciona */
+}
+
+::-moz-selection {
+  background-color: var(--border); /* Color de fondo para Firefox */
+  color: var(--white); /* Color del texto para Firefox */
+}
+
+.crt::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999;
+  background-size:
+    100% 2px,
+    3px 100%;
+  pointer-events: none;
+}
+
+.pet-element img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 512px) {
+  .pet-element img {
+    width: 240px;
+  }
+}
+
+.pet-name {
+  font-size: 16px;
+  font-family: consolas;
+}
