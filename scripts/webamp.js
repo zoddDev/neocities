@@ -1,3 +1,5 @@
+import { AudioLoader } from "./lib/musicLoader.js";
+
 // Shuffle songs
 function shuffle(array) {
   let currentIndex = array.length;
@@ -118,7 +120,7 @@ script.onload = function () {
   link.rel = "stylesheet";
   link.href = "styles/webamp-skins/webamp.css";
   document.head.appendChild(link);
-  // webamp.setVolume(20);
+  webamp.media.setVolume(AudioLoader.DEFAULT_VOLUME * 100);
   webamp.play();
 };
 script.src = "/scripts/webamp.bundle.min.js";

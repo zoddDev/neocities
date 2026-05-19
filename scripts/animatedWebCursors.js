@@ -1438,7 +1438,6 @@ function _windowsStandardLWorkingInBackgroundcur_tag(str_tag) {
 //this starts the cursor when the page loads...
 //if you want to have the cursor start another way, then comment this out
 function init() {
-  console.log("adsdas");
   animateCursor(arr_purple_normal);
   animateCursorForElement(arr_purple_wait, "input");
   animateCursorForElement(arr_purple_wait, "li");

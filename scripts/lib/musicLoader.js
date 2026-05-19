@@ -1,5 +1,5 @@
 export class AudioLoader {
-  static DEFAULT_VOLUME = 0.01;
+  static DEFAULT_VOLUME = 0.04;
 
   constructor(url) {
     this.url = url;
